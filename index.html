@@ -687,25 +687,25 @@
       nav.classList.toggle('is-scrolled', window.scrollY > 24);
     }, { passive: true });
 
-    // // Waitlist form
-    // function handleWaitlist(e) {
-    //   e.preventDefault();
-    //   const form  = e.target;
-    //   const email = form.querySelector('input[id="EMAIL"]').value.trim();
-    //   const status = document.getElementById('waitlist-status');
-    //   const btn   = form.querySelector('button[type="submit"]');
+    // Waitlist form
+    function handleWaitlist(e) {
+      e.preventDefault();
+      const form  = e.target;
+      const email = form.querySelector('input[id="EMAIL"]').value.trim();
+      const status = document.getElementById('waitlist-status');
+      const btn   = form.querySelector('button[type="submit"]');
 
-    //   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    //     status.textContent = 'Please enter a valid email address.';
-    //     status.className = 'waitlist__status waitlist__status--error';
-    //     return;
-    //   }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.className = 'waitlist__status waitlist__status--error';
+        return;
+      }
 
-    //   btn.disabled = true;
-    //   btn.textContent = "You're on the list ✓";
-    //   status.textContent = "Thanks! We'll reach out as we get closer to launch.";
-    //   status.className = 'waitlist__status waitlist__status--success';
-    // }
+      btn.disabled = true;
+      btn.textContent = "You're on the list ✓";
+      status.textContent = "Thanks! We'll reach out as we get closer to launch.";
+      status.className = 'waitlist__status waitlist__status--success';
+    }
 
     // Seller note toggle
     document.getElementById('seller-toggle').addEventListener('click', () => {
@@ -717,13 +717,8 @@
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Unfortunately, something isn't right. Not sure what you did, but please fix it";
-
     window.REQUIRED_ERROR_MESSAGE = "Please put something in here! ";
-
     window.GENERIC_INVALID_MESSAGE = "Unfortunately, something isn&#039;t right. Not sure what you did, but please fix it";
-
-
-
 
     window.translation = {
       common: {
